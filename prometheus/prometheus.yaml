@@ -15,4 +15,4 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
       - targets:
-          - 192.168.0.240:5000 # if localhost prometheus would try to find on its own container
+          - 192.168.0.240:5000 # if localhost prometheus would try to find on its own container. Another container name does not work too
