@@ -1,0 +1,18 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: dummy-prometheus
+    scrape_interval: 15s
+    scrape_timeout: 10s
+    metrics_path: /metrics
+    scheme: http
+    static_configs:
+      - targets:
+          - dummy-prometheus:9090 # its own metrics!
+
+  - job_name: dummy-python-api
+    metrics_path: /metrics
+    static_configs:
+      - targets:
+          - 192.168.0.240:5000 # if localhost prometheus would try to find on its own container
