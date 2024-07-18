@@ -2,6 +2,8 @@ version: "3.9"
 
 networks:
   monitoring:
+    name: monitoring
+    external: true
 
 services:
   dummy-prometheus:
